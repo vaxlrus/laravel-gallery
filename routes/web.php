@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Главная
+Route::get('/', 'ImagesController@index');
+
+// Загрузка новой картинки
+Route::get('/create', 'ImagesController@create');
+
+// Сохранение картинки
+Route::post('/store', 'ImagesController@store');
+
+// Отображение единичной картинки
+Route::get('/show/{id}', 'ImagesController@getOne');
+
+// Редактирование картинки
+Route::get('/edit/{id}', 'ImagesController@edit');
+
+// Обновление картинки
+Route::post('/update/{id}', 'ImagesController@update');
+
+// Удаление картинки
+Route::get('/delete/{id}', 'ImagesController@delete');
